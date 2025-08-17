@@ -13,7 +13,7 @@
   </properties>
 
   <dependencies>
-    <!-- Servlet/JSP APIs are provided by Tomcat -->
+    
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -28,12 +28,19 @@
       <version>8.0.33</version>
     </dependency>
 
-    <!-- Serialization (JSON) -->
+   
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
       <version>2.10.1</version>
     </dependency>
+    
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20240303</version>
+    </dependency>
+    
 
     <!-- Unit testing -->
     <dependency>
