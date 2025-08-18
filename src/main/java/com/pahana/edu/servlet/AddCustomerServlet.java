@@ -2,6 +2,7 @@ package com.pahana.edu.servlet;
 
 import java.io.IOException;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,9 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 
-@WebServlet(name = "AddCustomerServle", urlPatterns = { "/AddCustomerServle" })
+
+
+@WebServlet(name = "AddCustomerServlet", urlPatterns = {"/AddCustomerServlet"})
 public class AddCustomerServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+
+    private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
@@ -56,7 +60,7 @@ public class AddCustomerServlet extends HttpServlet {
 
         } catch (Exception e) {
             e.printStackTrace();
-            res.sendRedirect("customer.jsp?success=0");
+            res.sendRedirect("customer.jsp?success=0"); 
         } finally {
             try {
                 if (stmt != null) {
@@ -71,3 +75,4 @@ public class AddCustomerServlet extends HttpServlet {
         }
     }
 }
+

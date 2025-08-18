@@ -1,23 +1,27 @@
 package com.pahana.edu.servlet;
 
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.pahana.edu.dao.UserDAO;
-import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "LoginServle", urlPatterns = { "/LoginServle" })
+import javax.servlet.http.HttpSession;
+import com.pahana.edu.dao.UserDAO;
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
-     */
-    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
         String username = req.getParameter("username");
@@ -34,5 +38,5 @@ public class LoginServlet extends HttpServlet {
             res.sendRedirect("login.jsp?error=true");
         }
     }
-
 }
+

@@ -1,12 +1,17 @@
 package com.pahana.edu.dao;
 
 import java.sql.Connection;
+
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+
 import com.pahana.edu.util.ConnectionFactory;
 
 public class UserDAO {
-	   public boolean validate(String username, String password) {
+	 public boolean validate(String username, String password) {
 	        boolean isValid = false;
 
 	        try {

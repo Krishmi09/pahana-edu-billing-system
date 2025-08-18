@@ -127,19 +127,20 @@
             <div class="login-card">
                 <h2>Sign In</h2>
 
-                <!--Error message-->
-                <% if (request.getParameter("error") != null) { %>
-                <div class="error-msg" id="errorMsg">Invalid username or password</div>
+                <!-- Success/Error messages -->
+        <%
+            String msg = request.getParameter("success");
+            if ("0".equals(msg)) {
+        %>
+            <div class="message error" id="autoDisappear">Invalid username or password!</div>
+        <%
+            } else if ("1".equals(msg)) {
+        %>
+            <div class="message success" id="autoDisappear">Login successful!</div>
+        <%
+            }
+        %>
 
-                <script>
-                    setTimeout(function () {
-                        var errorBox = document.getElementById("errorMsg");
-                        if (errorBox) {
-                            errorBox.style.display = "none";
-                        }
-                    }, 3000); // Hide after 3 seconds
-                </script>
-                <% }%>
 
                 <form method="post" action="LoginServlet">
                     <label>Email</label>

@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 
-@WebServlet(name = "DeleteCustomerServle", urlPatterns = { "/DeleteCustomerServle" })
+@WebServlet(name = "DeleteCustomerServlet", urlPatterns = { "/DeleteCustomerServlet" })
 public class DeleteCustomerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

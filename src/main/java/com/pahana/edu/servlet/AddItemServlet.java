@@ -10,7 +10,7 @@ import java.sql.*;
 
 
 
-@WebServlet(name = "AddItemServle", urlPatterns = { "/AddItemServle" })
+@WebServlet(name = "AddItemServlet", urlPatterns = { "/AddItemServlet" })
 public class AddItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

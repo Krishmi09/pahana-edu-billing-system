@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 
-@WebServlet(name = "EditCustomerServle", urlPatterns = { "/EditCustomerServle" })
+@WebServlet(name = "EditCustomerServlet", urlPatterns = { "/EditCustomerServlet" })
 public class EditCustomerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	 protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 
 
-@WebServlet(name = "EditItemServle", urlPatterns = { "/EditItemServle" })
+@WebServlet(name = "EditItemServlet", urlPatterns = { "/EditItemServlet" })
 public class EditItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
