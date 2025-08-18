@@ -9,12 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 
-
 @WebServlet(name = "AddCustomerServle", urlPatterns = { "/AddCustomerServle" })
 public class AddCustomerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doPost(HttpServletRequest req, HttpServletResponse res)
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
         // Get parameters from form
@@ -57,7 +56,7 @@ public class AddCustomerServlet extends HttpServlet {
 
         } catch (Exception e) {
             e.printStackTrace();
-            res.sendRedirect("customer.jsp?success=0"); // Can add error param
+            res.sendRedirect("customer.jsp?success=0");
         } finally {
             try {
                 if (stmt != null) {
@@ -71,5 +70,4 @@ public class AddCustomerServlet extends HttpServlet {
             }
         }
     }
-
 }
