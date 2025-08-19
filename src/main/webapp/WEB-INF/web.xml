@@ -38,32 +38,15 @@
     <url-pattern>/LogoutServlet</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-    <servlet-name>AddCustomerServlet</servlet-name>
-    <servlet-class>com.pahana.edu.servlet.AddCustomerServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AddCustomerServlet</servlet-name>
-    <url-pattern>/AddCustomerServlet</url-pattern>
-  </servlet-mapping>
+ <servlet>
+    <servlet-name>CustomerController</servlet-name>
+    <servlet-class>com.pahana.edu.controller.CustomerController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>CustomerController</servlet-name>
+    <url-pattern>/CustomerController</url-pattern>
+</servlet-mapping>
 
-  <servlet>
-    <servlet-name>EditCustomerServlet</servlet-name>
-    <servlet-class>com.pahana.edu.servlet.EditCustomerServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EditCustomerServlet</servlet-name>
-    <url-pattern>/EditCustomerServlet</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>DeleteCustomerServlet</servlet-name>
-    <servlet-class>com.pahana.edu.servlet.DeleteCustomerServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteCustomerServlet</servlet-name>
-    <url-pattern>/DeleteCustomerServlet</url-pattern>
-  </servlet-mapping>
 
   <!-- Items -->
   <servlet>

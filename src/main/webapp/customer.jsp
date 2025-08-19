@@ -250,23 +250,36 @@
                         <td><%= c.get("address")%></td>
                         <td>
                             <a href="#" class="edit-btn" onclick="toggleEdit('<%= c.get("id")%>')"><i class="fas fa-edit"></i></a>
-                            <a href="DeleteCustomerServlet?id=<%= c.get("id")%>" class="delete-btn" onclick="return confirm('Are you sure you want to delete this customer?')"><i class="fas fa-trash"></i></a>
+                            <form action="CustomerController" method="post" style="display:inline;">
+                              <input type="hidden" name="action" value="delete">
+                              <input type="hidden" name="id" value="<%= c.get("id") %>">
+                             <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this customer?')">
+                           <i class="fas fa-trash"></i>
+                          </button>
+                        </form>
                         </td>
                     </tr>
-                    <tr id="editRow-<%= c.get("id")%>" class="edit-row">
-                        <td colspan="5">
-                            <form action="EditCustomerServlet" method="post">
-                                <input type="hidden" name="id" value="<%= c.get("id")%>">
-                                <div class="edit-form">
-                                    <input type="text" name="name" value="<%= c.get("name")%>" required>
-                                    <input type="email" name="email" value="<%= c.get("email")%>" required>
-                                    <input type="text" name="phone" value="<%= c.get("phone")%>" maxlength="10" required>
-                                    <input type="text" name="address" value="<%= c.get("address")%>" required>
-                                    <button type="submit" class="btn-update">Update</button>
-                                </div>
-                            </form>
-                        </td>
-                    </tr>
+                   <tr id="editRow-<%= c.get("id") %>" class="edit-row">
+    <td colspan="5">
+        <form action="CustomerController" method="post">
+            <!-- Hidden fields for action and customer ID -->
+            <input type="hidden" name="action" value="update">
+            <input type="hidden" name="id" value="<%= c.get("id") %>">
+
+            <div class="edit-form">
+                <!-- Editable fields -->
+                <input type="text" name="name" value="<%= c.get("name") %>" required>
+                <input type="email" name="email" value="<%= c.get("email") %>" required>
+                <input type="text" name="phone" value="<%= c.get("phone") %>" maxlength="10" required>
+                <input type="text" name="address" value="<%= c.get("address") %>" required>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn-update">Update</button>
+            </div>
+        </form>
+    </td>
+</tr>
+
                     <% }%>
                 </tbody>
             </table>

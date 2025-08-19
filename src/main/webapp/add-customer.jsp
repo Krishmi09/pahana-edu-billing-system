@@ -103,10 +103,12 @@
     </head>
     <body>
         <jsp:include page="sidebar.jsp" />
-        <div class="form-container">
-            <h2>Add New Customer</h2>
 
-            <form action="AddCustomerServlet" method="post" onsubmit="return validateForm()">
+            <div class="form-container">
+            <h2>Add New Customer</h2>
+            <form action="CustomerController" method="post" onsubmit="return validateForm()">
+                <input type="hidden" name="action" value="add">
+                
                 <input type="text" name="name" placeholder="Full Name" required />
                 <input type="email" name="email" placeholder="Email Address" required />
                 <input type="text" name="phone" placeholder="Phone Number" maxlength="10" required />

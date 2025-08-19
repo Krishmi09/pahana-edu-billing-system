@@ -141,7 +141,6 @@
             }
         %>
 
-
                 <form method="post" action="LoginServlet">
                     <label>Email</label>
                     <input type="text" name="username" placeholder="you@example.com" required>
