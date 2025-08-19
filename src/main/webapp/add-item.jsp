@@ -74,51 +74,48 @@
         <div class="form-container">
             <div class="form-box">
                 <h2>Add New Item</h2>
-                <form action="AddItemServlet" method="post">
-                    <label for="name">Item Name</label>
-                    <input type="text" id="name" name="name" required>
+   <form action="ItemController" method="post">
+    <input type="hidden" name="action" value="add">
 
-                    <label for="category">Category</label>
-                    <select id="category" name="category" required>
-                        <option value="">-- Select Category --</option>
-                        <%
-                            try {
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pahana_edu", "root", "");
-                                stmt = conn.prepareStatement("SELECT DISTINCT category FROM items");
-                                rs = stmt.executeQuery();
-                                while (rs.next()) {
-                        %>
-                        <option value="<%= rs.getString("category")%>"><%= rs.getString("category")%></option>
-                        <%
-                                }
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            } finally {
-                                if (rs != null) {
-                                    rs.close();
-                                }
-                                if (stmt != null) {
-                                    stmt.close();
-                                }
-                                if (conn != null) {
-                                    conn.close();
-                                }
-                            }
-                        %>
-                    </select>
+    <label for="name">Item Name</label>
+    <input type="text" id="name" name="name" required>
 
-                    <label for="price">Price</label>
-                    <input type="number" id="price" name="price" step="0.01" required>
+    <label for="category">Category</label>
+    <select id="category" name="category" required>
+        <option value="">-- Select Category --</option>
+        <% 
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pahana_edu", "root", "");
+                stmt = conn.prepareStatement("SELECT DISTINCT category FROM items");
+                rs = stmt.executeQuery();
+                while (rs.next()) {
+        %>
+        <option value="<%= rs.getString("category") %>"><%= rs.getString("category") %></option>
+        <% 
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            }
+        %>
+    </select>
 
-                    <label for="quantity">Quantity</label>
-                    <input type="number" id="quantity" name="quantity" required>
+    <label for="price">Price</label>
+    <input type="number" id="price" name="price" step="0.01" required>
 
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" rows="4"></textarea>
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" name="quantity" required>
 
-                    <button type="submit" class="btn-submit">Add Item</button>
-                </form>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="4"></textarea>
+
+    <button type="submit" class="btn-submit">Add Item</button>
+</form>
+
 
 
                 <a href="items.jsp" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Item List</a>

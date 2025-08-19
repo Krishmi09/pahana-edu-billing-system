@@ -190,25 +190,34 @@
                         <td><%= i.get("quantity")%></td>
                         <td>
                             <a href="#" class="edit-btn" onclick="toggleEdit('<%= i.get("id")%>')"><i class="fas fa-edit"></i></a>
-                            <a href="DeleteItemServlet?id=<%= i.get("id")%>" class="delete-btn" onclick="return confirm('Are you sure you want to delete the item?')"><i class="fas fa-trash"></i></a>
+                            <form action="ItemController" method="post" style="display:inline;">
+    <input type="hidden" name="action" value="delete">
+    <input type="hidden" name="id" value="<%= i.get("id") %>">
+    <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete the item?')">
+        <i class="fas fa-trash"></i>
+    </button>
+</form>
+
                         </td>
                     </tr>
                     <tr id="editRow-<%= i.get("id")%>" class="edit-row">
                         <td colspan="5">
-                            <form action="EditItemServlet" method="post">
-                                <input type="hidden" name="id" value="<%= i.get("id")%>">
-                                <div class="edit-form">
-                                    <input type="text" name="name" value="<%= i.get("name")%>" required>
-                                    <select name="category" required>
-                                        <% for (String cat : categories) {%>
-                                        <option value="<%= cat%>" <%= cat.equals(i.get("category")) ? "selected" : ""%>><%= cat%></option>
-                                        <% }%>
-                                    </select>
-                                    <input type="number" name="price" value="<%= i.get("price")%>" required>
-                                    <input type="number" name="quantity" value="<%= i.get("quantity")%>" required>
-                                    <button type="submit" class="btn-update">Update</button>
-                                </div>
-                            </form>
+                            <form action="ItemController" method="post">
+    <input type="hidden" name="action" value="update">
+    <input type="hidden" name="id" value="<%= i.get("id") %>">
+    <div class="edit-form">
+        <input type="text" name="name" value="<%= i.get("name") %>" required>
+        <select name="category" required>
+            <% for (String cat : categories) { %>
+            <option value="<%= cat %>" <%= cat.equals(i.get("category")) ? "selected" : "" %>><%= cat %></option>
+            <% } %>
+        </select>
+        <input type="number" name="price" value="<%= i.get("price") %>" required>
+        <input type="number" name="quantity" value="<%= i.get("quantity") %>" required>
+        <button type="submit" class="btn-update">Update</button>
+    </div>
+</form>
+
                         </td>
                     </tr>
                     <% }%>

@@ -49,32 +49,17 @@
 
 
   <!-- Items -->
-  <servlet>
-    <servlet-name>AddItemServlet</servlet-name>
-    <servlet-class>com.pahana.edu.servlet.AddItemServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AddItemServlet</servlet-name>
-    <url-pattern>/AddItemServlet</url-pattern>
-  </servlet-mapping>
+  
+<servlet>
+    <servlet-name>ItemController</servlet-name>
+    <servlet-class>com.pahana.edu.controller.ItemController</servlet-class>
+</servlet>
 
-  <servlet>
-    <servlet-name>EditItemServlet</servlet-name>
-    <servlet-class>com.pahana.edu.servlet.EditItemServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EditItemServlet</servlet-name>
-    <url-pattern>/EditItemServlet</url-pattern>
-  </servlet-mapping>
+<servlet-mapping>
+    <servlet-name>ItemController</servlet-name>
+    <url-pattern>/ItemController</url-pattern>
+</servlet-mapping>
 
-  <servlet>
-    <servlet-name>DeleteItemServlet</servlet-name>
-    <servlet-class>com.pahana.edu.servlet.DeleteItemServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteItemServlet</servlet-name>
-    <url-pattern>/DeleteItemServlet</url-pattern>
-  </servlet-mapping>
 
   <!-- Reports -->
   <servlet>
