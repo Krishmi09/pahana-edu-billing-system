@@ -71,14 +71,15 @@
 
 
   <!-- Reports -->
-  <servlet>
-    <servlet-name>ReportsServlet</servlet-name>
-    <servlet-class>com.pahana.edu.servlet.ReportsServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ReportsServlet</servlet-name>
-    <url-pattern>/ReportsServlet</url-pattern>
-  </servlet-mapping>
+ <servlet>
+        <servlet-name>ReportController</servlet-name>
+        <servlet-class>com.pahana.edu.controller.ReportController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReportController</servlet-name>
+        <url-pattern>/ReportController</url-pattern>
+    </servlet-mapping>
 
 </web-app>
 </element>
